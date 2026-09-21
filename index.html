@@ -1,0 +1,729 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FINBANK — Головна</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =========================
+         БІЧНА ПАНЕЛЬ
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <a href="index.html" class="logo">
+                <span class="logo-icon">F</span>
+                <span>FINBANK</span>
+            </a>
+
+            <nav class="main-navigation">
+
+                <a href="index.html" class="nav-item">
+                    <span class="nav-icon">⌂</span>
+                    <span>Головна</span>
+                </a>
+
+                <a href="cards.html" class="nav-item">
+                    <span class="nav-icon">▣</span>
+                    <span>Мої картки</span>
+                </a>
+
+                <a href="transfer.html" class="nav-item">
+                    <span class="nav-icon">↗</span>
+                    <span>Перекази</span>
+                </a>
+
+                <a href="payments.html" class="nav-item">
+                    <span class="nav-icon">₴</span>
+                    <span>Платежі</span>
+                </a>
+
+                <a href="history.html" class="nav-item">
+                    <span class="nav-icon">◷</span>
+                    <span>Історія</span>
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <button
+                type="button"
+                class="nav-item"
+                data-action="support"
+            >
+                <span class="nav-icon">?</span>
+                <span>Підтримка</span>
+            </button>
+
+            <button
+                type="button"
+                class="nav-item"
+                data-action="settings"
+            >
+                <span class="nav-icon">⚙</span>
+                <span>Налаштування</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         ОСНОВНИЙ КОНТЕНТ
+    ========================== -->
+
+    <main class="main-content">
+
+        <!-- Верхня панель -->
+
+        <header class="top-bar">
+
+            <div class="mobile-logo">
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">F</span>
+                    <span>FINBANK</span>
+                </a>
+            </div>
+
+
+            <div class="top-actions">
+
+                <button
+                    type="button"
+                    class="profile"
+                    data-action="profile"
+                    aria-label="Профіль"
+                >
+
+                    <span class="profile-avatar">
+                        А
+                    </span>
+
+                    <span class="profile-info">
+
+                        <strong>Анастасія</strong>
+
+                        <small>
+                            Особистий рахунок
+                        </small>
+
+                    </span>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             ВМІСТ ГОЛОВНОЇ
+        ========================== -->
+
+        <section class="dashboard">
+
+            <div class="dashboard-header">
+
+                <div>
+                    <span class="section-overline">
+                        FINBANK
+                    </span>
+
+                    <h1>
+                        Добрий день, Анастасіє
+                    </h1>
+
+                    <p>
+                        Огляд ваших фінансів
+                    </p>
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 СІТКА DASHBOARD
+            ========================== -->
+
+            <div class="dashboard-grid">
+
+
+                <!-- =========================
+                     КАРТКА БАЛАНСУ
+                ========================== -->
+
+                <section class="balance-card">
+
+                    <div class="balance-top">
+
+                        <div>
+
+                            <span class="balance-label">
+                                Доступний баланс
+                            </span>
+
+                            <div class="balance-value-row">
+
+                                <strong
+                                    class="balance-value"
+                                    id="balanceValue"
+                                >
+                                    15 230.00
+                                </strong>
+
+                                <span class="balance-currency">
+                                    ₴
+                                </span>
+
+                                <button
+                                    type="button"
+                                    class="balance-toggle"
+                                    aria-label="Приховати баланс"
+                                    title="Приховати баланс"
+                                >
+                                    ◉
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="balance-card-brand">
+                            FINBANK
+                        </div>
+
+                    </div>
+
+
+                    <div class="balance-card-number">
+
+                        <span
+                            data-active-card-number
+                        >
+                            •••• •••• •••• 5678
+                        </span>
+
+                    </div>
+
+
+                    <div class="balance-card-bottom">
+
+                        <div>
+
+                            <span>
+                                Картка
+                            </span>
+
+                            <strong
+                                data-active-card-name
+                            >
+                                Основна картка
+                            </strong>
+
+                        </div>
+
+
+                        <a
+                            href="cards.html"
+                            class="balance-link"
+                        >
+                            Керувати картками →
+                        </a>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =========================
+                     ШВИДКІ ДІЇ
+                ========================== -->
+
+                <section class="quick-actions">
+
+                    <div class="panel-heading">
+
+                        <div>
+                            <span class="section-overline">
+                                ДІЇ
+                            </span>
+
+                            <h2>
+                                Швидкі операції
+                            </h2>
+                        </div>
+
+                    </div>
+
+
+                    <div class="quick-actions-grid">
+
+                        <a
+                            href="transfer.html"
+                            class="quick-action"
+                        >
+
+                            <span class="quick-action-icon">
+                                ↗
+                            </span>
+
+                            <span class="quick-action-text">
+
+                                <strong>
+                                    Переказ
+                                </strong>
+
+                                <small>
+                                    Надіслати кошти
+                                </small>
+
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="payments.html"
+                            class="quick-action"
+                        >
+
+                            <span class="quick-action-icon">
+                                ₴
+                            </span>
+
+                            <span class="quick-action-text">
+
+                                <strong>
+                                    Оплата
+                                </strong>
+
+                                <small>
+                                    Послуги та рахунки
+                                </small>
+
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="cards.html"
+                            class="quick-action"
+                        >
+
+                            <span class="quick-action-icon">
+                                ▣
+                            </span>
+
+                            <span class="quick-action-text">
+
+                                <strong>
+                                    Картки
+                                </strong>
+
+                                <small>
+                                    Переглянути картки
+                                </small>
+
+                            </span>
+
+                        </a>
+
+
+                        <a
+                            href="history.html"
+                            class="quick-action"
+                        >
+
+                            <span class="quick-action-icon">
+                                ◷
+                            </span>
+
+                            <span class="quick-action-text">
+
+                                <strong>
+                                    Історія
+                                </strong>
+
+                                <small>
+                                    Усі операції
+                                </small>
+
+                            </span>
+
+                        </a>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+
+            <!-- =========================
+                 ФІНАНСОВИЙ ОГЛЯД
+            ========================== -->
+
+            <section class="dashboard-panels">
+
+                <div class="panel financial-overview">
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <span class="section-overline">
+                                СТАТИСТИКА
+                            </span>
+
+                            <h2>
+                                Фінансовий огляд
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="financial-overview-grid">
+
+                        <div class="overview-item">
+
+                            <span class="overview-icon income">
+                                ↑
+                            </span>
+
+                            <div>
+
+                                <span>
+                                    Надходження
+                                </span>
+
+                                <strong id="incomeTotal">
+                                    0.00 ₴
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="overview-item">
+
+                            <span class="overview-icon expense">
+                                ↓
+                            </span>
+
+                            <div>
+
+                                <span>
+                                    Витрати
+                                </span>
+
+                                <strong id="expenseTotal">
+                                    0.00 ₴
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="overview-item">
+
+                            <span class="overview-icon operations">
+                                #
+                            </span>
+
+                            <div>
+
+                                <span>
+                                    Операції
+                                </span>
+
+                                <strong id="operationsTotal">
+                                    0
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="overview-item">
+
+                            <span class="overview-icon balance">
+                                ₴
+                            </span>
+
+                            <div>
+
+                                <span>
+                                    Баланс
+                                </span>
+
+                                <strong id="overviewBalance">
+                                    15 230.00
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 ОПЕРАЦІЇ + ЦІЛІ
+            ========================== -->
+
+            <div class="dashboard-panels">
+
+
+                <!-- Останні операції -->
+
+                <section class="panel transactions">
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <span class="section-overline">
+                                ІСТОРІЯ
+                            </span>
+
+                            <h2>
+                                Останні операції
+                            </h2>
+
+                        </div>
+
+
+                        <a
+                            href="history.html"
+                            class="panel-link"
+                        >
+                            Усі операції →
+                        </a>
+
+                    </div>
+
+
+                    <div id="recentTransactions">
+
+                        <div class="transaction">
+
+                            <div class="transaction-icon expense">
+                                ↓
+                            </div>
+
+                            <div class="transaction-info">
+
+                                <strong>
+                                    Сільпо
+                                </strong>
+
+                                <span>
+                                    21.09.2026, 14:32
+                                </span>
+
+                            </div>
+
+                            <div class="transaction-amount negative">
+                                −345.00 ₴
+                            </div>
+
+                        </div>
+
+
+                        <div class="transaction">
+
+                            <div class="transaction-icon income">
+                                ↑
+                            </div>
+
+                            <div class="transaction-info">
+
+                                <strong>
+                                    Переказ від Олега
+                                </strong>
+
+                                <span>
+                                    21.09.2026, 10:12
+                                </span>
+
+                            </div>
+
+                            <div class="transaction-amount positive">
+                                +1 000.00 ₴
+                            </div>
+
+                        </div>
+
+
+                        <div class="transaction">
+
+                            <div class="transaction-icon expense">
+                                ↓
+                            </div>
+
+                            <div class="transaction-info">
+
+                                <strong>
+                                    Комунальні послуги
+                                </strong>
+
+                                <span>
+                                    20.09.2026, 18:47
+                                </span>
+
+                            </div>
+
+                            <div class="transaction-amount negative">
+                                −820.50 ₴
+                            </div>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+
+                <!-- Фінансові цілі -->
+
+                <section class="panel goals">
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <span class="section-overline">
+                                ПЛАНУВАННЯ
+                            </span>
+
+                            <h2>
+                                Фінансові цілі
+                            </h2>
+
+                        </div>
+
+
+                        <button
+                            type="button"
+                            id="addGoalButton"
+                            class="panel-add-button"
+                        >
+                            + Додати
+                        </button>
+
+                    </div>
+
+
+                    <div id="goalsList">
+
+                        <div class="goal">
+
+                            <div class="goal-icon">
+                                ✈
+                            </div>
+
+                            <div class="goal-info">
+
+                                <strong>
+                                    Подорож
+                                </strong>
+
+                                <span>
+                                    12 000.00 ₴ з 30 000.00 ₴
+                                </span>
+
+                                <div class="progress">
+
+                                    <div
+                                        class="progress-bar"
+                                        style="width: 40%;"
+                                    ></div>
+
+                                </div>
+
+                            </div>
+
+                            <strong class="goal-percent">
+                                40%
+                            </strong>
+
+                        </div>
+
+
+                        <div class="goal">
+
+                            <div class="goal-icon">
+                                ⌨
+                            </div>
+
+                            <div class="goal-info">
+
+                                <strong>
+                                    Новий ноутбук
+                                </strong>
+
+                                <span>
+                                    18 500.00 ₴ з 40 000.00 ₴
+                                </span>
+
+                                <div class="progress">
+
+                                    <div
+                                        class="progress-bar"
+                                        style="width: 46%;"
+                                    ></div>
+
+                                </div>
+
+                            </div>
+
+                            <strong class="goal-percent">
+                                46%
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </section>
+
+            </div>
+
+<script src="script.js"></script>
+
+</body>
+</html>

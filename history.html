@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>FINBANK — Історія операцій</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <a href="index.html" class="logo">
+                <span class="logo-icon">F</span>
+                <span>FINBANK</span>
+            </a>
+
+
+            <nav class="main-navigation">
+
+                <a href="index.html" class="nav-item">
+                    <span class="nav-icon">⌂</span>
+                    <span>Головна</span>
+                </a>
+
+
+                <a href="cards.html" class="nav-item">
+                    <span class="nav-icon">▣</span>
+                    <span>Мої картки</span>
+                </a>
+
+
+                <a href="transfer.html" class="nav-item">
+                    <span class="nav-icon">↗</span>
+                    <span>Перекази</span>
+                </a>
+
+
+                <a href="payments.html" class="nav-item">
+                    <span class="nav-icon">₴</span>
+                    <span>Платежі</span>
+                </a>
+
+
+                <a href="history.html" class="nav-item active">
+                    <span class="nav-icon">◷</span>
+                    <span>Історія</span>
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <button
+                type="button"
+                class="nav-item"
+                data-action="support"
+            >
+                <span class="nav-icon">?</span>
+                <span>Підтримка</span>
+            </button>
+
+
+            <button
+                type="button"
+                class="nav-item"
+                data-action="settings"
+            >
+                <span class="nav-icon">⚙</span>
+                <span>Налаштування</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="top-bar">
+
+            <div class="mobile-logo">
+
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">F</span>
+                    <span>FINBANK</span>
+                </a>
+
+            </div>
+
+
+            <div class="top-actions">
+
+                <button
+                    type="button"
+                    class="profile"
+                    data-action="profile"
+                    aria-label="Профіль"
+                >
+
+                    <span class="profile-avatar">
+                        А
+                    </span>
+
+
+                    <span class="profile-info">
+
+                        <strong>
+                            Анастасія
+                        </strong>
+
+                        <small>
+                            Особистий рахунок
+                        </small>
+
+                    </span>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             HISTORY PAGE
+        ========================== -->
+
+        <section class="history-page">
+
+
+            <!-- =========================
+                 HEADER
+            ========================== -->
+
+            <div class="history-title-row">
+
+                <div>
+
+                    <span class="section-overline">
+                        FINBANK
+                    </span>
+
+                    <h1>
+                        Історія операцій
+                    </h1>
+
+                    <p>
+                        Переглядайте всі операції за вашою карткою
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    class="export-button"
+                    id="exportHistory"
+                >
+                    <span>
+                        ↓
+                    </span>
+
+                    Експортувати
+                </button>
+
+            </div>
+
+
+            <!-- =========================
+                 STATISTICS
+            ========================== -->
+
+            <div class="history-statistics">
+
+                <div class="history-stat-card">
+
+                    <div class="history-stat-icon">
+                        #
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Операцій
+                        </span>
+
+                        <strong id="operationCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="history-stat-card">
+
+                    <div class="history-stat-icon income">
+                        ↑
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Надходження
+                        </span>
+
+                        <strong id="historyIncome">
+                            0.00 ₴
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="history-stat-card">
+
+                    <div class="history-stat-icon expense">
+                        ↓
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Витрати
+                        </span>
+
+                        <strong id="historyExpenses">
+                            0.00 ₴
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 FILTERS
+            ========================== -->
+
+            <section class="history-panel">
+
+                <div class="history-filters">
+
+                    <div class="history-search">
+
+                        <span>
+                            ⌕
+                        </span>
+
+                        <input
+                            type="search"
+                            id="historySearch"
+                            placeholder="Пошук операції..."
+                            autocomplete="off"
+                        >
+
+                    </div>
+
+
+                    <div class="history-filter-buttons">
+
+                        <button
+                            type="button"
+                            class="history-filter active"
+                            data-history-filter="all"
+                        >
+                            Усі
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="history-filter"
+                            data-history-filter="income"
+                        >
+                            Надходження
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="history-filter"
+                            data-history-filter="expense"
+                        >
+                            Витрати
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     OPERATIONS
+                ========================== -->
+
+                <div
+                    class="operations-list"
+                    id="operationsList"
+                >
+
+                    <!--
+                        Операції автоматично
+                        додаються через script.js
+                    -->
+
+                    <div class="operation-item">
+
+                        <div class="operation-icon expense">
+                            ↓
+                        </div>
+
+
+                        <div class="operation-main">
+
+                            <strong>
+                                Сільпо
+                            </strong>
+
+                            <span>
+                                Покупки
+                            </span>
+
+                            <small>
+                                21.09.2026, 14:32
+                            </small>
+
+                        </div>
+
+
+                        <div class="operation-right">
+
+                            <strong class="negative">
+                                −345.00 ₴
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="operation-item">
+
+                        <div class="operation-icon income">
+                            ↑
+                        </div>
+
+
+                        <div class="operation-main">
+
+                            <strong>
+                                Переказ від Олега
+                            </strong>
+
+                            <span>
+                                Переказ
+                            </span>
+
+                            <small>
+                                21.09.2026, 10:12
+                            </small>
+
+                        </div>
+
+
+                        <div class="operation-right">
+
+                            <strong class="positive">
+                                +1 000.00 ₴
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="operation-item">
+
+                        <div class="operation-icon expense">
+                            ↓
+                        </div>
+
+
+                        <div class="operation-main">
+
+                            <strong>
+                                Комунальні послуги
+                            </strong>
+
+                            <span>
+                                Комунальні
+                            </span>
+
+                            <small>
+                                20.09.2026, 18:47
+                            </small>
+
+                        </div>
+
+
+                        <div class="operation-right">
+
+                            <strong class="negative">
+                                −820.50 ₴
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="operation-item">
+
+                        <div class="operation-icon income">
+                            ↑
+                        </div>
+
+
+                        <div class="operation-main">
+
+                            <strong>
+                                Зарплата
+                            </strong>
+
+                            <span>
+                                Надходження
+                            </span>
+
+                            <small>
+                                18.09.2026, 09:20
+                            </small>
+
+                        </div>
+
+
+                        <div class="operation-right">
+
+                            <strong class="positive">
+                                +24 000.00 ₴
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- =========================
+                     NO RESULTS
+                ========================== -->
+
+                <div
+                    class="history-no-results"
+                    id="historyNoResults"
+                    hidden
+                >
+
+                    <div class="history-no-results-icon">
+                        ⌕
+                    </div>
+
+                    <strong>
+                        Операцій не знайдено
+                    </strong>
+
+                    <p>
+                        Спробуйте змінити пошуковий запит
+                        або вибрати інший фільтр.
+                    </p>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 INFORMATION
+            ========================== -->
+
+            <section class="history-info">
+
+                <div class="history-info-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <strong>
+                        Історія зберігається автоматично
+                    </strong>
+
+                    <p>
+                        Нові перекази та платежі автоматично
+                        з'являються у списку операцій.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

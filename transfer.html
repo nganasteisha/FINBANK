@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FINBANK — Переказ</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <a href="index.html" class="logo">
+                <span class="logo-icon">F</span>
+                <span>FINBANK</span>
+            </a>
+
+            <nav class="main-navigation">
+
+                <a href="index.html" class="nav-item">
+                    <span class="nav-icon">⌂</span>
+                    <span>Головна</span>
+                </a>
+
+                <a href="cards.html" class="nav-item">
+                    <span class="nav-icon">▣</span>
+                    <span>Мої картки</span>
+                </a>
+
+                <a href="transfer.html" class="nav-item">
+                    <span class="nav-icon">↗</span>
+                    <span>Перекази</span>
+                </a>
+
+                <a href="payments.html" class="nav-item">
+                    <span class="nav-icon">₴</span>
+                    <span>Платежі</span>
+                </a>
+
+                <a href="history.html" class="nav-item">
+                    <span class="nav-icon">◷</span>
+                    <span>Історія</span>
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <button
+                type="button"
+                class="nav-item"
+                data-action="support"
+            >
+                <span class="nav-icon">?</span>
+                <span>Підтримка</span>
+            </button>
+
+            <button
+                type="button"
+                class="nav-item"
+                data-action="settings"
+            >
+                <span class="nav-icon">⚙</span>
+                <span>Налаштування</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="top-bar">
+
+            <div class="mobile-logo">
+
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">F</span>
+                    <span>FINBANK</span>
+                </a>
+
+            </div>
+
+
+            <div class="top-actions">
+
+                <button
+                    type="button"
+                    class="profile"
+                    data-action="profile"
+                    aria-label="Профіль"
+                >
+
+                    <span class="profile-avatar">
+                        А
+                    </span>
+
+                    <span class="profile-info">
+
+                        <strong>
+                            Анастасія
+                        </strong>
+
+                        <small>
+                            Особистий рахунок
+                        </small>
+
+                    </span>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             TRANSFER PAGE
+        ========================== -->
+
+        <section class="transfer-page">
+
+            <div class="transfer-page-header">
+
+                <a
+                    href="index.html"
+                    class="back-link"
+                >
+                    ← Назад
+                </a>
+
+                <div>
+
+                    <span class="section-overline">
+                        ПЛАТІЖНА ОПЕРАЦІЯ
+                    </span>
+
+                    <h1>
+                        Переказ коштів
+                    </h1>
+
+                    <p>
+                        Швидко та безпечно надішліть кошти отримувачу
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="transfer-layout">
+
+                <!-- =========================
+                     LEFT — FORM
+                ========================== -->
+
+                <div class="transfer-form-card">
+
+                    <form
+                        id="transferForm"
+                        novalidate
+                    >
+
+                        <!-- ВИБІР ОТРИМУВАЧА -->
+
+                        <div class="form-section">
+
+                            <div class="form-section-title">
+
+                                <span class="form-number">
+                                    01
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Отримувач
+                                    </strong>
+
+                                    <small>
+                                        Кому ви хочете переказати кошти?
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="recipient-tabs">
+
+                                <button
+                                    type="button"
+                                    class="recipient-tab active"
+                                    data-type="card"
+                                >
+                                    <span>▣</span>
+                                    Картка
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="recipient-tab"
+                                    data-type="phone"
+                                >
+                                    <span>☎</span>
+                                    Телефон
+                                </button>
+
+                                <button
+                                    type="button"
+                                    class="recipient-tab"
+                                    data-type="iban"
+                                >
+                                    <span>№</span>
+                                    IBAN
+                                </button>
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="recipient">
+                                    Номер картки
+                                </label>
+
+                                <input
+                                    type="text"
+                                    id="recipient"
+                                    name="recipient"
+                                    placeholder="0000 0000 0000 0000"
+                                    maxlength="19"
+                                    autocomplete="off"
+                                >
+
+                                <div
+                                    class="input-help"
+                                    id="recipientHelp"
+                                >
+                                    Введіть 16 цифр номера картки
+                                </div>
+
+                            </div>
+
+
+                            <!-- ЗБЕРЕЖЕНИЙ ОТРИМУВАЧ -->
+
+                            <div
+                                class="recipient-preview"
+                                id="recipientPreview"
+                            >
+
+                                <button
+                                    type="button"
+                                    id="selectAnna"
+                                    class="saved-recipient-card"
+                                    data-recipient="4321432143214321"
+                                >
+
+                                    <span class="saved-recipient-icon">
+                                        А
+                                    </span>
+
+                                    <span class="saved-recipient-info">
+
+                                        <strong>
+                                            Анна Коваль
+                                        </strong>
+
+                                        <small>
+                                            •••• •••• •••• 4321
+                                        </small>
+
+                                    </span>
+
+                                    <span class="saved-recipient-arrow">
+                                        →
+                                    </span>
+
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- ВИБІР КАРТКИ -->
+
+                        <div class="form-section">
+
+                            <div class="form-section-title">
+
+                                <span class="form-number">
+                                    02
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Картка списання
+                                    </strong>
+
+                                    <small>
+                                        Виберіть картку, з якої буде списано кошти
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <div
+                                id="transferCardSelector"
+                                class="card-selector-list"
+                            >
+                                <!-- Картки додаються через script.js -->
+                            </div>
+
+                        </div>
+
+
+                        <!-- СУМА -->
+
+                        <div class="form-section">
+
+                            <div class="form-section-title">
+
+                                <span class="form-number">
+                                    03
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Сума переказу
+                                    </strong>
+
+                                    <small>
+                                        Вкажіть суму, яку потрібно переказати
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="form-field">
+
+                                <label for="amount">
+                                    Сума
+                                </label>
+
+
+                                <div class="amount-input-wrapper">
+
+                                    <input
+                                        type="number"
+                                        id="amount"
+                                        name="amount"
+                                        min="1"
+                                        step="0.01"
+                                        placeholder="0.00"
+                                        autocomplete="off"
+                                    >
+
+                                    <span>
+                                        ₴
+                                    </span>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="quick-amounts">
+
+                                <button
+                                    type="button"
+                                    data-amount="500"
+                                >
+                                    500 ₴
+                                </button>
+
+                                <button
+                                    type="button"
+                                    data-amount="1000"
+                                >
+                                    1 000 ₴
+                                </button>
+
+                                <button
+                                    type="button"
+                                    data-amount="2000"
+                                >
+                                    2 000 ₴
+                                </button>
+
+                                <button
+                                    type="button"
+                                    data-amount="5000"
+                                >
+                                    5 000 ₴
+                                </button>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- КОМЕНТАР -->
+
+                        <div class="form-section">
+
+                            <div class="form-section-title">
+
+                                <span class="form-number">
+                                    04
+                                </span>
+
+                                <div>
+
+                                    <strong>
+                                        Коментар
+                                    </strong>
+
+                                    <small>
+                                        Необов'язково
+                                    </small>
+
+                                </div>
+
+                            </div>
+
+
+                            <div class="comment-wrapper">
+
+                                <textarea
+                                    id="comment"
+                                    name="comment"
+                                    maxlength="200"
+                                    placeholder="Наприклад: За вечерю"
+                                    rows="4"
+                                ></textarea>
+
+                                <span class="character-count">
+                                    <span id="characterCount">0</span>/200
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- КНОПКА -->
+
+                        <button
+                            type="submit"
+                            class="transfer-submit"
+                        >
+
+                            <span>
+                                Продовжити
+                            </span>
+
+                            <span>
+                                →
+                            </span>
+
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+                <!-- =========================
+                     RIGHT — SUMMARY
+                ========================== -->
+
+                <aside class="transfer-side">
+
+                    <!-- ЕТАПИ -->
+
+                    <div class="transfer-steps">
+
+                        <div class="transfer-step active">
+
+                            <span class="step-number">
+                                1
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Дані переказу
+                                </strong>
+
+                                <small>
+                                    Заповніть форму
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="step-line"></div>
+
+
+                        <div class="transfer-step">
+
+                            <span class="step-number">
+                                2
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Перевірка
+                                </strong>
+
+                                <small>
+                                    Перевірте дані
+                                </small>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="step-line"></div>
+
+
+                        <div class="transfer-step">
+
+                            <span class="step-number">
+                                3
+                            </span>
+
+                            <div>
+
+                                <strong>
+                                    Готово
+                                </strong>
+
+                                <small>
+                                    Переказ виконано
+                                </small>
+
+                            </div>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- ПІДСУМОК -->
+
+                    <div class="panel transfer-summary">
+
+                        <div class="panel-heading">
+
+                            <div>
+
+                                <span class="section-overline">
+                                    ПІДСУМОК
+                                </span>
+
+                                <h2>
+                                    Переказ
+                                </h2>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="summary-row">
+
+                            <span>
+                                Сума
+                            </span>
+
+                            <strong id="summaryAmount">
+                                0.00 ₴
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-row">
+
+                            <span>
+                                Комісія
+                            </span>
+
+                            <strong>
+                                0.00 ₴
+                            </strong>
+
+                        </div>
+
+
+                        <div class="summary-divider"></div>
+
+
+                        <div class="summary-total">
+
+                            <span>
+                                До списання
+                            </span>
+
+                            <strong id="totalAmount">
+                                0.00 ₴
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <!-- БЕЗПЕКА -->
+
+                    <div class="transfer-security">
+
+                        <span class="security-icon">
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Безпечно
+                            </strong>
+
+                            <p>
+                                Перед підтвердженням ви зможете
+                                перевірити всі дані переказу.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </aside>
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

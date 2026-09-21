@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FINBANK — Платежі</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <a href="index.html" class="logo">
+                <span class="logo-icon">F</span>
+                <span>FINBANK</span>
+            </a>
+
+            <nav class="main-navigation">
+
+                <a href="index.html" class="nav-item">
+                    <span class="nav-icon">⌂</span>
+                    <span>Головна</span>
+                </a>
+
+                <a href="cards.html" class="nav-item">
+                    <span class="nav-icon">▣</span>
+                    <span>Мої картки</span>
+                </a>
+
+                <a href="transfer.html" class="nav-item">
+                    <span class="nav-icon">↗</span>
+                    <span>Перекази</span>
+                </a>
+
+                <a href="payments.html" class="nav-item">
+                    <span class="nav-icon">₴</span>
+                    <span>Платежі</span>
+                </a>
+
+                <a href="history.html" class="nav-item">
+                    <span class="nav-icon">◷</span>
+                    <span>Історія</span>
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <button
+                type="button"
+                class="nav-item"
+                data-action="support"
+            >
+                <span class="nav-icon">?</span>
+                <span>Підтримка</span>
+            </button>
+
+            <button
+                type="button"
+                class="nav-item"
+                data-action="settings"
+            >
+                <span class="nav-icon">⚙</span>
+                <span>Налаштування</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN
+    ========================== -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="top-bar">
+
+            <div class="mobile-logo">
+
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">F</span>
+                    <span>FINBANK</span>
+                </a>
+
+            </div>
+
+
+            <div class="top-actions">
+
+                <button
+                    type="button"
+                    class="profile"
+                    data-action="profile"
+                    aria-label="Профіль"
+                >
+
+                    <span class="profile-avatar">
+                        А
+                    </span>
+
+                    <span class="profile-info">
+
+                        <strong>
+                            Анастасія
+                        </strong>
+
+                        <small>
+                            Особистий рахунок
+                        </small>
+
+                    </span>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             PAYMENTS PAGE
+        ========================== -->
+
+        <section class="payments-page">
+
+            <div class="payments-page-header">
+
+                <div>
+
+                    <span class="section-overline">
+                        FINBANK
+                    </span>
+
+                    <h1>
+                        Платежі
+                    </h1>
+
+                    <p>
+                        Оплачуйте послуги швидко та зручно
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 SEARCH
+            ========================== -->
+
+            <div class="payment-search">
+
+                <span class="payment-search-icon">
+                    ⌕
+                </span>
+
+                <input
+                    type="search"
+                    id="paymentSearch"
+                    placeholder="Знайти послугу або компанію..."
+                    autocomplete="off"
+                >
+
+            </div>
+
+
+            <!-- =========================
+                 CATEGORIES
+            ========================== -->
+
+            <div class="payment-categories">
+
+                <button
+                    type="button"
+                    class="payment-category active"
+                    data-category="all"
+                >
+                    <span class="payment-category-icon">
+                        ◉
+                    </span>
+
+                    <span>
+                        Усі
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="payment-category"
+                    data-category="Комунальні"
+                >
+                    <span class="payment-category-icon utilities">
+                        ⚡
+                    </span>
+
+                    <span>
+                        Комунальні
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="payment-category"
+                    data-category="Мобільний зв'язок"
+                >
+                    <span class="payment-category-icon mobile">
+                        ☎
+                    </span>
+
+                    <span>
+                        Мобільний
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="payment-category"
+                    data-category="Інтернет"
+                >
+                    <span class="payment-category-icon internet">
+                        ◉
+                    </span>
+
+                    <span>
+                        Інтернет
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="payment-category"
+                    data-category="Телебачення"
+                >
+                    <span class="payment-category-icon tv">
+                        ▷
+                    </span>
+
+                    <span>
+                        Телебачення
+                    </span>
+                </button>
+
+
+                <button
+                    type="button"
+                    class="payment-category"
+                    data-category="Інше"
+                >
+                    <span class="payment-category-icon other">
+                        +
+                    </span>
+
+                    <span>
+                        Інше
+                    </span>
+                </button>
+
+            </div>
+
+
+            <!-- =========================
+                 MAIN PAYMENT CONTENT
+            ========================== -->
+
+            <div class="payments-content">
+
+
+                <!-- =========================
+                     PROVIDERS
+                ========================== -->
+
+                <section class="providers-panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <span class="section-overline">
+                                ПОСЛУГИ
+                            </span>
+
+                            <h2>
+                                Оберіть послугу
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <div
+                        class="providers-grid"
+                        id="providersGrid"
+                    >
+
+
+                        <!-- MOBILE -->
+
+                        <button
+                            type="button"
+                            class="provider-card"
+                            data-provider="Київстар"
+                            data-category="Мобільний зв'язок"
+                        >
+
+                            <span class="provider-logo kyivstar">
+                                K
+                            </span>
+
+                            <strong>
+                                Київстар
+                            </strong>
+
+                            <small>
+                                Мобільний зв'язок
+                            </small>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="provider-card"
+                            data-provider="Vodafone"
+                            data-category="Мобільний зв'язок"
+                        >
+
+                            <span class="provider-logo vodafone">
+                                V
+                            </span>
+
+                            <strong>
+                                Vodafone
+                            </strong>
+
+                            <small>
+                                Мобільний зв'язок
+                            </small>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="provider-card"
+                            data-provider="lifecell"
+                            data-category="Мобільний зв'язок"
+                        >
+
+                            <span class="provider-logo lifecell">
+                                L
+                            </span>
+
+                            <strong>
+                                lifecell
+                            </strong>
+
+                            <small>
+                                Мобільний зв'язок
+                            </small>
+
+                        </button>
+
+
+                        <!-- ІНТЕРНЕТ -->
+
+                        <button
+                            type="button"
+                            class="provider-card"
+                            data-provider="Lanet"
+                            data-category="Інтернет"
+                        >
+
+                            <span class="provider-logo lanet">
+                                L
+                            </span>
+
+                            <strong>
+                                Lanet
+                            </strong>
+
+                            <small>
+                                Інтернет
+                            </small>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="provider-card"
+                            data-provider="Volia"
+                            data-category="Інтернет"
+                        >
+
+                            <span class="provider-logo volia">
+                                V
+                            </span>
+
+                            <strong>
+                                Volia
+                            </strong>
+
+                            <small>
+                                Інтернет
+                            </small>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="provider-card"
+                            data-provider="Kyivstar Internet"
+                            data-category="Інтернет"
+                        >
+
+                            <span class="provider-logo internet-logo">
+                                K
+                            </span>
+
+                            <strong>
+                                Kyivstar Internet
+                            </strong>
+
+                            <small>
+                                Інтернет
+                            </small>
+
+                        </button>
+
+
+                        <!-- КОМУНАЛЬНІ -->
+
+                        <button
+                            type="button"
+                            class="provider-card"
+                            data-provider="Львівводоканал"
+                            data-category="Комунальні"
+                        >
+
+                            <span class="provider-logo water">
+                                W
+                            </span>
+
+                            <strong>
+                                Львівводоканал
+                            </strong>
+
+                            <small>
+                                Комунальні
+                            </small>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="provider-card"
+                            data-provider="Львівгаз"
+                            data-category="Комунальні"
+                        >
+
+                            <span class="provider-logo gas">
+                                G
+                            </span>
+
+                            <strong>
+                                Львівгаз
+                            </strong>
+
+                            <small>
+                                Комунальні
+                            </small>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="provider-card"
+                            data-provider="Львівтеплоенерго"
+                            data-category="Комунальні"
+                        >
+
+                            <span class="provider-logo heat">
+                                H
+                            </span>
+
+                            <strong>
+                                Львівтеплоенерго
+                            </strong>
+
+                            <small>
+                                Комунальні
+                            </small>
+
+                        </button>
+
+
+                        <!-- ТЕЛЕБАЧЕННЯ -->
+
+                        <button
+                            type="button"
+                            class="provider-card"
+                            data-provider="Megogo"
+                            data-category="Телебачення"
+                        >
+
+                            <span class="provider-logo megogo">
+                                M
+                            </span>
+
+                            <strong>
+                                MEGOGO
+                            </strong>
+
+                            <small>
+                                Телебачення
+                            </small>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="provider-card"
+                            data-provider="Sweet TV"
+                            data-category="Телебачення"
+                        >
+
+                            <span class="provider-logo sweet-tv">
+                                S
+                            </span>
+
+                            <strong>
+                                SWEET.TV
+                            </strong>
+
+                            <small>
+                                Телебачення
+                            </small>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="provider-card"
+                            data-provider="Volia TV"
+                            data-category="Телебачення"
+                        >
+
+                            <span class="provider-logo volia-tv">
+                                V
+                            </span>
+
+                            <strong>
+                                Volia TV
+                            </strong>
+
+                            <small>
+                                Телебачення
+                            </small>
+
+                        </button>
+
+
+                        <!-- ІНШЕ -->
+
+                        <button
+                            type="button"
+                            class="provider-card"
+                            data-provider="Netflix"
+                            data-category="Інше"
+                        >
+
+                            <span class="provider-logo netflix">
+                                N
+                            </span>
+
+                            <strong>
+                                Netflix
+                            </strong>
+
+                            <small>
+                                Інше
+                            </small>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="provider-card"
+                            data-provider="Spotify"
+                            data-category="Інше"
+                        >
+
+                            <span class="provider-logo spotify">
+                                S
+                            </span>
+
+                            <strong>
+                                Spotify
+                            </strong>
+
+                            <small>
+                                Інше
+                            </small>
+
+                        </button>
+
+
+                        <button
+                            type="button"
+                            class="provider-card"
+                            data-provider="Apple"
+                            data-category="Інше"
+                        >
+
+                            <span class="provider-logo apple">
+                                A
+                            </span>
+
+                            <strong>
+                                Apple
+                            </strong>
+
+                            <small>
+                                Інше
+                            </small>
+
+                        </button>
+
+                    </div>
+
+                </section>
+
+
+                <!-- =========================
+                     QUICK PAYMENT
+                ========================== -->
+
+                <aside class="quick-payment-panel">
+
+                    <div class="panel-heading">
+
+                        <div>
+
+                            <span class="section-overline">
+                                ОПЛАТА
+                            </span>
+
+                            <h2>
+                                Дані платежу
+                            </h2>
+
+                        </div>
+
+                    </div>
+
+
+                    <form
+                        id="paymentForm"
+                        novalidate
+                    >
+
+
+                        <!-- SELECTED PROVIDER -->
+
+                        <div class="selected-service">
+
+                            <span>
+                                Обрана послуга
+                            </span>
+
+                            <strong id="selectedProvider">
+                                Оберіть послугу
+                            </strong>
+
+                        </div>
+
+
+                        <!-- CARD -->
+
+                        <div class="payment-form-section">
+
+                            <label>
+                                Картка для оплати
+                            </label>
+
+                            <div
+                                id="paymentCardSelector"
+                                class="card-selector-list"
+                            >
+                                <!-- Картки додаються через JS -->
+                            </div>
+
+                        </div>
+
+
+                        <!-- NUMBER -->
+
+                        <div class="payment-form-section">
+
+                            <label
+                                class="payment-label"
+                                for="paymentNumber"
+                            >
+                                Номер або особовий рахунок
+                            </label>
+
+                            <input
+                                type="text"
+                                id="paymentNumber"
+                                class="payment-input"
+                                placeholder="Введіть номер"
+                                autocomplete="off"
+                            >
+
+                        </div>
+
+
+                        <!-- AMOUNT -->
+
+                        <div class="payment-form-section">
+
+                            <label
+                                class="payment-label"
+                                for="paymentAmount"
+                            >
+                                Сума платежу
+                            </label>
+
+
+                            <div class="payment-amount">
+
+                                <input
+                                    type="number"
+                                    id="paymentAmount"
+                                    min="1"
+                                    step="0.01"
+                                    placeholder="0.00"
+                                >
+
+                                <span>
+                                    ₴
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <!-- BALANCE -->
+
+                        <div class="payment-balance">
+
+                            <span>
+                                Доступний баланс
+                            </span>
+
+                            <strong
+                                data-active-card-balance
+                            >
+                                15 230.00 ₴
+                            </strong>
+
+                        </div>
+
+
+                        <!-- SUBMIT -->
+
+                        <button
+                            type="submit"
+                            class="payment-submit"
+                            id="paymentSubmit"
+                        >
+
+                            <span>
+                                Оплатити
+                            </span>
+
+                            <span>
+                                →
+                            </span>
+
+                        </button>
+
+
+                        <p class="payment-security">
+
+                            <span>
+                                ✓
+                            </span>
+
+                            Платіж буде записано
+                            в історію операцій.
+
+                        </p>
+
+                    </form>
+
+                </aside>
+
+            </div>
+
+
+            <!-- =========================
+                 SAVED PAYMENTS
+            ========================== -->
+
+            <section class="saved-payments">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <span class="section-overline">
+                            ШВИДКИЙ ДОСТУП
+                        </span>
+
+                        <h2>
+                            Збережені платежі
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="saved-payment-grid">
+
+                    <div class="saved-payment">
+
+                        <span class="saved-payment-icon">
+                            ⚡
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Комунальні
+                            </strong>
+
+                            <small>
+                                Швидка оплата
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="saved-payment">
+
+                        <span class="saved-payment-icon">
+                            ☎
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Мобільний
+                            </strong>
+
+                            <small>
+                                Поповнення
+                            </small>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="saved-payment">
+
+                        <span class="saved-payment-icon">
+                            ◉
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Інтернет
+                            </strong>
+
+                            <small>
+                                Щомісячна оплата
+                            </small>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

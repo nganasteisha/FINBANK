@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FINBANK — Підтвердження переказу</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <a href="index.html" class="logo">
+                <span class="logo-icon">F</span>
+                <span>FINBANK</span>
+            </a>
+
+            <nav class="main-navigation">
+
+                <a href="index.html" class="nav-item">
+                    <span class="nav-icon">⌂</span>
+                    <span>Головна</span>
+                </a>
+
+                <a href="cards.html" class="nav-item">
+                    <span class="nav-icon">▣</span>
+                    <span>Мої картки</span>
+                </a>
+
+                <a href="transfer.html" class="nav-item">
+                    <span class="nav-icon">↗</span>
+                    <span>Перекази</span>
+                </a>
+
+                <a href="payments.html" class="nav-item">
+                    <span class="nav-icon">₴</span>
+                    <span>Платежі</span>
+                </a>
+
+                <a href="history.html" class="nav-item">
+                    <span class="nav-icon">◷</span>
+                    <span>Історія</span>
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <button
+                type="button"
+                class="nav-item"
+                data-action="support"
+            >
+                <span class="nav-icon">?</span>
+                <span>Підтримка</span>
+            </button>
+
+            <button
+                type="button"
+                class="nav-item"
+                data-action="settings"
+            >
+                <span class="nav-icon">⚙</span>
+                <span>Налаштування</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="top-bar">
+
+            <div class="mobile-logo">
+
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">F</span>
+                    <span>FINBANK</span>
+                </a>
+
+            </div>
+
+
+            <div class="top-actions">
+
+                <button
+                    type="button"
+                    class="profile"
+                    data-action="profile"
+                    aria-label="Профіль"
+                >
+
+                    <span class="profile-avatar">
+                        А
+                    </span>
+
+                    <span class="profile-info">
+
+                        <strong>
+                            Анастасія
+                        </strong>
+
+                        <small>
+                            Особистий рахунок
+                        </small>
+
+                    </span>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             PAGE HEADER
+        ========================== -->
+
+        <section class="transfer-page-header">
+
+            <a
+                href="transfer.html"
+                class="back-link"
+            >
+                ← Змінити переказ
+            </a>
+
+            <div>
+
+                <span class="section-overline">
+                    КРОК 2 ІЗ 3
+                </span>
+
+                <h1>
+                    Підтвердження переказу
+                </h1>
+
+                <p>
+                    Перевірте дані перед виконанням операції
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             CONFIRMATION LAYOUT
+        ========================== -->
+
+        <section class="confirmation-layout">
+
+
+            <!-- =========================
+                 MAIN CONFIRMATION CARD
+            ========================== -->
+
+            <div class="confirmation-card">
+
+
+                <!-- ОТРИМУВАЧ -->
+
+                <div class="confirmation-section">
+
+                    <div class="confirmation-section-header">
+
+                        <span class="confirmation-number">
+                            01
+                        </span>
+
+                        <span>
+                            Отримувач
+                        </span>
+
+                        <a
+                            href="transfer.html"
+                            class="edit-link"
+                        >
+                            Змінити
+                        </a>
+
+                    </div>
+
+
+                    <div class="person-card">
+
+                        <div class="person-avatar">
+                            А
+                        </div>
+
+
+                        <div class="person-info">
+
+                            <strong id="confirmRecipient">
+                                —
+                            </strong>
+
+                            <span>
+                                Отримувач переказу
+                            </span>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- СУМА -->
+
+                <div class="confirmation-section">
+
+                    <div class="confirmation-section-header">
+
+                        <span class="confirmation-number">
+                            02
+                        </span>
+
+                        <span>
+                            Сума переказу
+                        </span>
+
+                    </div>
+
+
+                    <div class="confirmation-amount">
+
+                        <span class="big-amount" id="confirmAmount">
+                            0.00 ₴
+                        </span>
+
+                        <span class="confirmation-caption">
+                            До списання з вашої картки
+                        </span>
+
+                    </div>
+
+
+                    <div class="amount-details">
+
+                        <div class="amount-detail-row">
+
+                            <span>
+                                Сума переказу
+                            </span>
+
+                            <strong id="detailAmount">
+                                0.00 ₴
+                            </strong>
+
+                        </div>
+
+
+                        <div class="amount-detail-row">
+
+                            <span>
+                                Комісія
+                            </span>
+
+                            <strong>
+                                0.00 ₴
+                            </strong>
+
+                        </div>
+
+
+                        <div class="amount-detail-row total">
+
+                            <span>
+                                Загалом
+                            </span>
+
+                            <strong id="detailTotal">
+                                0.00 ₴
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- КОМЕНТАР -->
+
+                <div
+                    class="confirmation-section"
+                    id="commentSection"
+                >
+
+                    <div class="confirmation-section-header">
+
+                        <span class="confirmation-number">
+                            03
+                        </span>
+
+                        <span>
+                            Коментар
+                        </span>
+
+                    </div>
+
+
+                    <div class="comment-preview">
+
+                        <span class="comment-preview-icon">
+                            “
+                        </span>
+
+                        <p id="confirmComment">
+                            Без коментаря
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ПОПЕРЕДЖЕННЯ -->
+
+                <div class="confirmation-warning">
+
+                    <span class="warning-icon">
+                        !
+                    </span>
+
+                    <div>
+
+                        <strong>
+                            Перевірте реквізити
+                        </strong>
+
+                        <p>
+                            Після підтвердження операцію буде виконано,
+                            а кошти буде списано з вибраної картки.
+                        </p>
+
+                    </div>
+
+                </div>
+
+
+                <!-- КНОПКИ -->
+
+                <div class="confirmation-actions">
+
+                    <a
+                        href="transfer.html"
+                        class="secondary-button"
+                    >
+                        ← Назад
+                    </a>
+
+
+                    <button
+                        type="button"
+                        class="primary-button"
+                        id="confirmTransfer"
+                    >
+
+                        <span>
+                            Підтвердити переказ
+                        </span>
+
+                        <span>
+                            →
+                        </span>
+
+                    </button>
+
+                </div>
+
+
+                <p class="secure-note">
+
+                    <span>
+                        ✓
+                    </span>
+
+                    Захищено двофакторною автентифікацією
+
+                </p>
+
+            </div>
+
+
+            <!-- =========================
+                 RIGHT SIDE
+            ========================== -->
+
+            <aside class="confirmation-side">
+
+
+                <!-- СТАТУС -->
+
+                <div class="confirmation-status-card">
+
+                    <div class="status-circle">
+                        2
+                    </div>
+
+
+                    <strong>
+                        Підтвердження
+                    </strong>
+
+
+                    <span>
+                        Перевірте інформацію
+                        перед виконанням операції.
+                    </span>
+
+
+                    <div class="status-line">
+
+                        <div class="status-line-fill"></div>
+
+                    </div>
+
+
+                    <small>
+                        Крок 2 із 3
+                    </small>
+
+                </div>
+
+
+                <!-- БЕЗПЕКА -->
+
+                <div class="safe-card">
+
+                    <div class="safe-icon">
+                        ✓
+                    </div>
+
+
+                    <strong>
+                        Безпечний переказ
+                    </strong>
+
+
+                    <p>
+                        FINBANK перевіряє дані операції
+                        перед виконанням переказу.
+                    </p>
+
+                </div>
+
+
+                <!-- ЩО БУДЕ ДАЛІ -->
+
+                <div class="confirmation-next-card">
+
+                    <span class="section-overline">
+                        ДАЛІ
+                    </span>
+
+                    <h3>
+                        Виконання операції
+                    </h3>
+
+                    <p>
+                        Після підтвердження кошти будуть
+                        списані з вибраної картки.
+                    </p>
+
+                    <div class="next-step">
+
+                        <span>
+                            3
+                        </span>
+
+                        <strong>
+                            Переказ виконано
+                        </strong>
+
+                    </div>
+
+                </div>
+
+            </aside>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

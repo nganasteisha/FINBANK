@@ -1,0 +1,451 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>FINBANK — Мої картки</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <a href="index.html" class="logo">
+                <span class="logo-icon">F</span>
+                <span>FINBANK</span>
+            </a>
+
+            <nav class="main-navigation">
+
+                <a href="index.html" class="nav-item">
+                    <span class="nav-icon">⌂</span>
+                    <span>Головна</span>
+                </a>
+
+                <a href="cards.html" class="nav-item">
+                    <span class="nav-icon">▣</span>
+                    <span>Мої картки</span>
+                </a>
+
+                <a href="transfer.html" class="nav-item">
+                    <span class="nav-icon">↗</span>
+                    <span>Перекази</span>
+                </a>
+
+                <a href="payments.html" class="nav-item">
+                    <span class="nav-icon">₴</span>
+                    <span>Платежі</span>
+                </a>
+
+                <a href="history.html" class="nav-item">
+                    <span class="nav-icon">◷</span>
+                    <span>Історія</span>
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <button
+                type="button"
+                class="nav-item"
+                data-action="support"
+            >
+                <span class="nav-icon">?</span>
+                <span>Підтримка</span>
+            </button>
+
+            <button
+                type="button"
+                class="nav-item"
+                data-action="settings"
+            >
+                <span class="nav-icon">⚙</span>
+                <span>Налаштування</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="top-bar">
+
+            <div class="mobile-logo">
+
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">F</span>
+                    <span>FINBANK</span>
+                </a>
+
+            </div>
+
+
+            <div class="top-actions">
+
+                <button
+                    type="button"
+                    class="profile"
+                    data-action="profile"
+                    aria-label="Профіль"
+                >
+
+                    <span class="profile-avatar">
+                        А
+                    </span>
+
+                    <span class="profile-info">
+
+                        <strong>
+                            Анастасія
+                        </strong>
+
+                        <small>
+                            Особистий рахунок
+                        </small>
+
+                    </span>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             CARDS PAGE
+        ========================== -->
+
+        <section class="cards-page">
+
+            <div class="cards-page-header">
+
+                <div>
+
+                    <span class="section-overline">
+                        FINBANK
+                    </span>
+
+                    <h1>
+                        Мої картки
+                    </h1>
+
+                    <p>
+                        Керуйте своїми картками та рахунками
+                    </p>
+
+                </div>
+
+
+                <button
+                    type="button"
+                    id="addCardButton"
+                    class="primary-button"
+                >
+
+                    <span>
+                        + Додати картку
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- =========================
+                 CARDS CONTAINER
+            ========================== -->
+
+            <section class="cards-section">
+
+                <div class="section-header">
+
+                    <div>
+
+                        <span class="section-overline">
+                            ВАШІ КАРТКИ
+                        </span>
+
+                        <h2>
+                            Банківські картки
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <!--
+                    script.js автоматично
+                    створює картки тут
+                -->
+
+                <div
+                    class="my-cards-grid"
+                    data-cards-container
+                >
+
+                    <article class="bank-card-item active">
+
+                        <div class="bank-card-visual">
+
+                            <div class="bank-card-top">
+
+                                <strong>
+                                    FinBank
+                                </strong>
+
+                                <span>
+                                    Visa
+                                </span>
+
+                            </div>
+
+
+                            <div class="bank-card-number">
+                                •••• •••• •••• 5678
+                            </div>
+
+
+                            <div class="bank-card-bottom">
+
+                                <div>
+
+                                    <small>
+                                        ВЛАСНИК
+                                    </small>
+
+                                    <strong>
+                                        ANASTASIA N
+                                    </strong>
+
+                                </div>
+
+
+                                <div>
+
+                                    <small>
+                                        ДІЙСНА ДО
+                                    </small>
+
+                                    <strong>
+                                        12/29
+                                    </strong>
+
+                                </div>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="bank-card-details">
+
+                            <div class="bank-card-heading">
+
+                                <div>
+
+                                    <small>
+                                        АКТИВНА КАРТКА
+                                    </small>
+
+                                    <h2>
+                                        Основна картка
+                                    </h2>
+
+                                    <span>
+                                        Visa •••• 5678
+                                    </span>
+
+                                </div>
+
+                                <span class="active-badge">
+                                    Активна
+                                </span>
+
+                            </div>
+
+
+                            <div class="bank-card-balance">
+
+                                <span>
+                                    Баланс картки
+                                </span>
+
+                                <strong>
+                                    15 230.00 ₴
+                                </strong>
+
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 INFORMATION
+            ========================== -->
+
+            <section class="card-details-panel">
+
+                <div class="panel-heading">
+
+                    <div>
+
+                        <span class="section-overline">
+                            ІНФОРМАЦІЯ
+                        </span>
+
+                        <h2>
+                            Керування картками
+                        </h2>
+
+                    </div>
+
+                </div>
+
+
+                <div class="card-details-grid">
+
+                    <div class="card-detail">
+
+                        <span class="card-detail-icon">
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Основна картка
+                            </strong>
+
+                            <p>
+                                Активна картка використовується
+                                для переказів та платежів за замовчуванням.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-detail">
+
+                        <span class="card-detail-icon">
+                            +
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Додайте картку
+                            </strong>
+
+                            <p>
+                                Ви можете додати ще одну картку
+                                та перемикатися між рахунками.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+
+                    <div class="card-detail">
+
+                        <span class="card-detail-icon">
+                            🔒
+                        </span>
+
+                        <div>
+
+                            <strong>
+                                Захист
+                            </strong>
+
+                            <p>
+                                Заблоковану картку не можна
+                                використовувати для переказів.
+                            </p>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- =========================
+                 SECURITY
+            ========================== -->
+
+            <section class="cards-security">
+
+                <div class="security-icon">
+                    ✓
+                </div>
+
+                <div>
+
+                    <strong>
+                        Ваші картки захищені
+                    </strong>
+
+                    <p>
+                        Дані карток зберігаються локально
+                        у навчальному макеті FINBANK.
+                    </p>
+
+                </div>
+
+            </section>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>

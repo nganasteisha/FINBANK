@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>FINBANK — Переказ виконано</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cinzel:wght@500;600;700&family=Montserrat:wght@400;500;600;700&display=swap"
+        rel="stylesheet"
+    >
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+<div class="app">
+
+    <!-- =========================
+         SIDEBAR
+    ========================== -->
+
+    <aside class="sidebar">
+
+        <div class="sidebar-top">
+
+            <a href="index.html" class="logo">
+                <span class="logo-icon">F</span>
+                <span>FINBANK</span>
+            </a>
+
+            <nav class="main-navigation">
+
+                <a href="index.html" class="nav-item">
+                    <span class="nav-icon">⌂</span>
+                    <span>Головна</span>
+                </a>
+
+                <a href="cards.html" class="nav-item">
+                    <span class="nav-icon">▣</span>
+                    <span>Мої картки</span>
+                </a>
+
+                <a href="transfer.html" class="nav-item">
+                    <span class="nav-icon">↗</span>
+                    <span>Перекази</span>
+                </a>
+
+                <a href="payments.html" class="nav-item">
+                    <span class="nav-icon">₴</span>
+                    <span>Платежі</span>
+                </a>
+
+                <a href="history.html" class="nav-item">
+                    <span class="nav-icon">◷</span>
+                    <span>Історія</span>
+                </a>
+
+            </nav>
+
+        </div>
+
+
+        <div class="sidebar-bottom">
+
+            <button
+                type="button"
+                class="nav-item"
+                data-action="support"
+            >
+                <span class="nav-icon">?</span>
+                <span>Підтримка</span>
+            </button>
+
+            <button
+                type="button"
+                class="nav-item"
+                data-action="settings"
+            >
+                <span class="nav-icon">⚙</span>
+                <span>Налаштування</span>
+            </button>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
+    <main class="main-content">
+
+        <!-- TOP BAR -->
+
+        <header class="top-bar">
+
+            <div class="mobile-logo">
+
+                <a href="index.html" class="logo">
+                    <span class="logo-icon">F</span>
+                    <span>FINBANK</span>
+                </a>
+
+            </div>
+
+
+            <div class="top-actions">
+
+                <button
+                    type="button"
+                    class="profile"
+                    data-action="profile"
+                    aria-label="Профіль"
+                >
+
+                    <span class="profile-avatar">
+                        А
+                    </span>
+
+                    <span class="profile-info">
+
+                        <strong>
+                            Анастасія
+                        </strong>
+
+                        <small>
+                            Особистий рахунок
+                        </small>
+
+                    </span>
+
+                </button>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================
+             SUCCESS PAGE
+        ========================== -->
+
+        <section class="success-page">
+
+
+            <!-- SUCCESS ICON -->
+
+            <div class="success-icon-wrapper">
+
+                <div class="success-icon">
+                    ✓
+                </div>
+
+            </div>
+
+
+            <span class="section-overline">
+                ОПЕРАЦІЮ ЗАВЕРШЕНО
+            </span>
+
+
+            <h1>
+                Переказ виконано
+            </h1>
+
+
+            <p class="success-description">
+                Кошти успішно надіслано отримувачу.
+            </p>
+
+
+            <!-- AMOUNT -->
+
+            <div
+                class="success-amount"
+                id="successAmount"
+            >
+                0.00 ₴
+            </div>
+
+
+            <!-- =========================
+                 DETAILS CARD
+            ========================== -->
+
+            <div class="success-card">
+
+
+                <!-- ОТРИМУВАЧ -->
+
+                <div class="success-row">
+
+                    <div class="success-row-left">
+
+                        <span class="success-row-icon">
+                            А
+                        </span>
+
+                        <div>
+
+                            <span>
+                                Отримувач
+                            </span>
+
+                            <strong id="successRecipient">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ДАТА -->
+
+                <div class="success-row">
+
+                    <div class="success-row-left">
+
+                        <span class="success-row-icon">
+                            ◷
+                        </span>
+
+                        <div>
+
+                            <span>
+                                Дата операції
+                            </span>
+
+                            <strong id="successDate">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+
+                <!-- ID ОПЕРАЦІЇ -->
+
+                <div class="success-row">
+
+                    <div class="success-row-left">
+
+                        <span class="success-row-icon">
+                            #
+                        </span>
+
+                        <div>
+
+                            <span>
+                                ID операції
+                            </span>
+
+                            <strong id="transactionId">
+                                —
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+
+                    <button
+                        type="button"
+                        class="copy-button"
+                        id="copyTransactionId"
+                    >
+                        Копіювати
+                    </button>
+
+                </div>
+
+
+                <!-- STATUS -->
+
+                <div class="success-row">
+
+                    <div class="success-row-left">
+
+                        <span class="success-row-icon success-check">
+                            ✓
+                        </span>
+
+                        <div>
+
+                            <span>
+                                Статус
+                            </span>
+
+                            <strong>
+                                Успішно виконано
+                            </strong>
+
+                        </div>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 SECURITY
+            ========================== -->
+
+            <div class="success-security">
+
+                <span>
+                    ✓
+                </span>
+
+                <div>
+
+                    <strong>
+                        Операція захищена
+                    </strong>
+
+                    <p>
+                        Інформацію про переказ збережено
+                        у вашій історії операцій.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <!-- =========================
+                 ACTIONS
+            ========================== -->
+
+            <div class="success-actions">
+
+                <a
+                    href="transfer.html"
+                    class="new-transfer"
+                >
+                    Новий переказ
+                </a>
+
+
+                <a
+                    href="history.html"
+                    class="secondary-button"
+                >
+                    Переглянути історію
+                </a>
+
+
+                <button
+                    type="button"
+                    class="secondary-button"
+                    id="saveReceipt"
+                >
+                    Зберегти квитанцію
+                </button>
+
+            </div>
+
+
+            <a
+                href="index.html"
+                class="back-link"
+            >
+                ← Повернутися на головну
+            </a>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<script src="script.js"></script>
+
+</body>
+</html>
